@@ -1,0 +1,30 @@
+box: node
+
+build:
+  steps:
+    - script:
+        name: echo nodejs information
+        code: |
+          echo "node version $(node -v) running"
+          echo "npm version $(npm -v) running"
+
+    - npm-install
+    - npm-test
+
+
+deploy:
+  steps:
+    - add-ssh-key:
+        keyname: DEPLOYKEY
+    - script:
+        name: Force add to known hosts due to custom port
+        code: |
+          ssh -p $SERVER_PORT -o StrictHostKeyChecking=no $SERVER apps
+    - script:
+        name: Add remote
+        code: |
+          git remote add server ssh://$SERVER/$PATH || true
+    - script:
+        name: Push to server
+        code: |
+          git push server $WERCKER_GIT_COMMIT:master -f

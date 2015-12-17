@@ -1,0 +1,63 @@
+<div id="contacts" class="main-container">
+    <section id="location">
+        <article>
+            <div id="tabBox" class="clearfix">
+                <div class="content clearfix">
+                    <ul class="nav">
+                        <li><a href="#tabOne" class="current" title="<%= I18n.t('contacts.map') %>"><%= I18n.t('contacts.map') %></a></li>
+                        <li><a href="#tabTwo" title="<%= I18n.t('contacts.street') %>"><%= I18n.t('contacts.street') %></a></li>
+                    </ul>
+                </div><!-- End of content -->
+
+                <div>
+                  <%= I18n.t('contacts.bigLabName') %>
+                </div>
+                <div id="tabOne">
+                    <iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2958.191091536989!2d24.749565295770264!3d42.14619745670694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14acd1bb50133489%3A0xd8f26f0e40e0ab62!2sulitsa+%2211-ti+avgust%22!5e0!3m2!1sen!2sbg!4v1399473730801"></iframe>
+                </div><!-- End of tabOne -->
+                <div id="tabFour" class="hide" style="position: relative; top: 0px; left: 0px; display: none;">
+                    <iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2958.034113509653!2d24.748067426458732!3d42.14955681120296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14acd1bd0f93f3b7%3A0xd885af8f12ef8369!2sulitsa+%22Magura%22+1!5e0!3m2!1sen!2sbg!4v1401010558265"></iframe>
+
+                </div><!-- End of tabFour -->
+            </div>
+
+        </article>
+    </section>
+
+    <section id="contacts">
+        <article>
+            <div class="content clearfix">
+                <header class="clearfix">
+                    <h2><%= I18n.t('contacts.contacts') %></h2>
+                    <address>
+                      <%= I18n.t('contacts.org') %><br>
+                      <%= I18n.t('contacts.loc') %>
+                    </address>
+                </header>
+                <ul class="contactMembers">
+                    <li>
+                      <h3>Е-mail</h3>
+                      <span class="mail"><%= I18n.t('contacts.chief') %></span>
+                      <a href="mailto:info@hackafe.org" title="info@hackafe.org">info@hackafe.org</a><br>
+                      <span class="mail"><%= I18n.t('contacts.events') %></span>
+                      <a href="mailto:events@hackafe.org" title="events@hackafe.org">events@hackafe.org</a><br>
+                      <span class="mail"><%= I18n.t('contacts.finance') %></span>
+                      <a href="mailto:finance@hackafe.org" title="finance@hackafe.org">finance@hackafe.org</a><br>
+                      <span class="mail"><%= I18n.t('contacts.manager') %></span>
+                      <a href="mailto:office@hackafe.org" title="office@hackafe.org">office@hackafe.org</a><br>
+                    </li>
+                    <li>
+                      <h3>E-mails</h3>
+                      <span class="mail"><%= I18n.t('contacts.common') %></span>
+                      <a href="http://luna.superhosting.bg/mailman/listinfo/general_hackafe.org" rel="external" title="general@hackafe.org">general@hackafe.org</a><br>
+                      <span class="mail"><%= I18n.t('contacts.announcement') %></span>
+                      <a href="http://luna.superhosting.bg/mailman/listinfo/announce_hackafe.org" rel="external" title="announce@hackafe.org">announce@hackafe.org</a><br>
+                      <span class="mail"><%= I18n.t('contacts.system') %></span>
+                      <a href="http://luna.superhosting.bg/mailman/listinfo/dev_hackafe.org" rel="external" title="dev@hackafe.org">dev@hackafe.org</a><br>
+                    </li>
+                </ul><!-- End of contactMembers -->
+
+            </div>
+        </article>
+    </section>
+</div> <!-- end of .main-container -->

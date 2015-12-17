@@ -1,0 +1,21 @@
+
+<h3><%= I18n.t('newsletter.title') %></h3>
+
+<!-- <form id="newsletter-form" method="post" action="http://hackafe.org/newsletter/?p=subscribe&id=1" name="signup" target="windowName"> -->
+<form id="newsletter-form" method="post" action="http://hackafe.org/newsletter/?p=subscribe&id=1" name="subscribeform">
+
+    <input type="text" id="email" name="email" placeholder="<%= I18n.t('newsletter.emailPlaceholder') %>" required />
+
+    <input type="hidden" name="htmlemail" value="1" />
+
+    <input type="hidden" name="list[2]" value="signup" />
+
+    <input type="hidden" name="listname[2]" value="newsletter" />
+
+    <div style="display:none">
+        <input type="text" name="VerificationCodeX" value="" size="20">
+    </div>
+
+    <input type="submit" name="subscribe" value="<%= I18n.t('newsletter.subscribe') %>" />
+
+</form>

@@ -1,0 +1,31 @@
+<%
+    var page = Backbone.history.location.hash;
+%>
+<div class="header-container">
+    <header id="header" class="clearfix">
+
+        <div class="language" id="js-change-language">
+            <a href="javascript:;" data-locale="BG" title="български" <% if(I18n.locale === 'BG') { %>class="active" <% } %>>български</a>
+            <a href="javascript:;" data-locale="EN" title="english" <% if(I18n.locale === 'EN') { %>class="active" <% } %>>english</a>
+        </div>
+
+        <h1 class="logo"><a href="/#!/" title="<%= I18n.t('navigation.logo') %>"><img src="app/img/hackafe.png" alt="<%= I18n.t('navigation.logo') %>"><span><%= I18n.t('navigation.logo') %></span></a></h1>
+
+
+        <nav class="wrapper clearfix" id="navigation">
+            <a href="/#!/" title="<%= I18n.t('navigation.home') %>" <% if(page === '#!/' || page === '') { %>class="active"<% } %> ><%= I18n.t('navigation.home') %></a>
+            <a href="/#!/members" title="<%= I18n.t('navigation.member') %>"  <% if(page === '#!/members') { %>class="active"<% } %>><%= I18n.t('navigation.member') %></a>
+            <!-- <a href="/#!/events" title="<%= I18n.t('navigation.events') %>" <% if(page.indexOf('events') !== -1) { %>class="active"<% } %>><%= I18n.t('navigation.events') %></a> -->
+            <!-- <a href="/#!/announcements" title="<%= I18n.t('navigation.announcements') %>" <% if(page.indexOf('announcements') !== -1) { %>class="active"<% } %>>Обяви</a> -->
+            <a href="/#!/sponsors" title="<%= I18n.t('navigation.sponsors') %>" <% if(page.indexOf('sponsors') !== -1) { %>class="active"<% } %>><%= I18n.t('navigation.sponsors') %></a>
+
+            <a href="/#!/projects" title="<%= I18n.t('navigation.projects') %>" <% if(page.indexOf('projects') !== -1) { %>class="active"<% } %>><%= I18n.t('navigation.projects') %></a>
+
+            <a href="http://wiki.hackafe.org" title="<%= I18n.t('navigation.wiki') %>" target="blank"><%= I18n.t('navigation.wiki') %></a>
+            <a href="http://frm.hackafe.org" title="<%= I18n.t('navigation.forum') %>" target="blank"><%= I18n.t('navigation.forum') %></a>
+            <a href="/#!/contacts" title="<%= I18n.t('navigation.contacts') %>" <% if(page === '#!/contacts') { %>class="active"<% } %>><%= I18n.t('navigation.contacts') %></a>
+        </nav>
+
+    </header> <!-- end div class="wrapper" -->
+    <div id="who-is-in-the-lab-placeholder"></div>
+</div> <!-- end div class="header-container" -->

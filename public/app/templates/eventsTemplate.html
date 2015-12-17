@@ -1,0 +1,131 @@
+<%
+
+    var view = this,
+        eventsList = this.eventsCollection.where({"isCourse": false}),
+        courseList = this.eventsCollection.where({"isCourse": true}),
+        nextPage = this.nextEventsUrlParam,
+        prevPage = this.previousEventsUrlParam,
+        selectedTab = this.selectedSection,
+        futureEvents = this.futureEventsCollection.models;
+ %>
+<div id="events" class="main-container">
+
+    <section class="events">
+
+        <header>
+            <h1 class="page-title"><%= I18n.t('events.eventscourses') %></h1>
+        </header>
+
+        <nav id="events-menu" class="inner-navigation size-3">
+            <a href="javascript:;" data-target="upcoming" class="show-content
+                <% if(selectedTab == 0) { %>active<% } %>"><%= I18n.t('events.events') %></a>
+            <a href="javascript:;" data-target="courses" class="show-content
+                <% if(selectedTab == 1) { %>active<% } %>"><%= I18n.t('events.courses') %></a>
+            <a href="javascript:;" data-target="for-voting" class="show-content
+                <% if(selectedTab == 2) { %>active<% } %>"><%= I18n.t('events.for_vote') %></a>
+        </nav>
+
+        <div id="upcoming" class="section <% if(selectedTab == 0) { %>visible<% } %>">
+            <h2><%= I18n.t('events.upcoming') %></h2>
+
+                <% _.each(eventsList, function(event) { %>
+                    <% console.log(['event', event]) %>
+                    <% var eventDate = new Date(event.get('start_time')) %>
+
+                    <article class="event article-background">
+                        <% if (event.get('picture')) { %>
+                            <img src="<%= (event.get('picture')).data.url %>" class="event-thumb">
+                        <% } %>
+                        <h3><%= event.get('name') %></h3>
+                        <p class="date">
+                            <%= I18n.t('events.date') %>
+                            <%= eventDate.toLocaleDateString() %>
+                        </p>
+
+                        <p>
+                            <%= event.get('description').replace(new RegExp('\r?\n','g'), '<br />') %>
+                        </p>
+                        <p class="fb-link">
+                            <%= I18n.t('events.fblink') %>: <a href="//facebook.com/events/<%= event.get('id') %>" target="_blank"><%= event.get('name') %></a>
+                        </p>
+                    </article>
+
+                <% }); %>
+
+            <div class="pagination inner-navigation size-2">
+
+                <% if(prevPage) { %>
+                    <a href="javascript:;"  class="load-prev-page" title="<%= I18n.t('events.prevPage') %>"><%= I18n.t('events.prevPage') %></a>
+                <% } %>
+
+
+                <% if(nextPage) { %>
+                    <a href="javascript:;" class="load-next-page" title="<%= I18n.t('events.nextPage') %>"><%= I18n.t('events.nextPage') %></a>
+                <% } %>
+            </div><!-- end of .archive -->
+
+        </div>
+
+        <div id="courses" class="section <% if(selectedTab == 1) { %>visible<% } %>">
+            <h2><%= I18n.t('events.courses') %></h2>
+
+                <% _.each(courseList, function(course) { %>
+
+                    <% var courseStartDate = new Date(course.get('start_time'));
+                       var courseEndDate = new Date(course.get('end_time')) %>
+
+                    <article class="event article-background">
+                        <% if (course.get('picture')) { %>
+                            <img src="<%= (course.get('picture')).data.url %>" class="event-thumb">
+                        <% } %>
+                        <h3><%= course.get('name') %></h3>
+                        <p class="date">
+                            <%= I18n.t('events.date') %>
+                            <%= I18n.t('events.from') %>
+                            <%= courseStartDate.toLocaleDateString() %>
+                            <%= I18n.t('events.to') %>
+                            <%= courseEndDate.toLocaleDateString() %>
+                        </p>
+                        <p>
+                            <%= course.get('description').replace(new RegExp('\r?\n','g'), '<br />') %>
+                        </p>
+                        <p class="fb-link">
+                            <%= I18n.t('events.fblink') %>: <a href="//facebook.com/events/<%= course.get('id') %>" target="_blank"><%= course.get('name') %></a>
+                        </p>
+                    </article>
+
+                <% }); %>
+                <div class="pagination inner-navigation size-2">
+
+                    <% if(prevPage) { %>
+                        <a href="javascript:;"  class="load-prev-page" title="<%= I18n.t('events.prevPage') %>"><%= I18n.t('events.prevPage') %></a>
+                    <% } %>
+
+
+                    <% if(nextPage) { %>
+                        <a href="javascript:;" class="load-next-page" title="<%= I18n.t('events.nextPage') %>"><%= I18n.t('events.nextPage') %></a>
+                    <% } %>
+                </div><!-- end of .archive -->
+        </div><!-- end of .courses -->
+
+        <!-- Dev Note: Static Content for now -->
+        <div id="for-voting" class="section <% if(selectedTab == 2) { %>visible<% } %>">
+            <h2><%= I18n.t('events.for_voting_title') %></h2>
+
+            <% _.each(futureEvents, function(event, index) { %>
+
+                <article class="event article-background clearfix">
+                    <img src="app/img/events/<%= event.get('image') %>" class="event-thumb">
+                    <h3><%= event.get('title') %></h3>
+                    <p class="date">Лектор: <%= event.get('presenter') %></p>
+                    <p>
+                        <%= event.get('description') %>
+                    </p>
+                </article>
+            <% }); %>
+        </div><!-- /#for-voting -->
+
+    </section>
+    <!-- end of section .events -->
+
+</div> <!-- end of .main-container -->

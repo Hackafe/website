@@ -1,0 +1,19 @@
+{
+  "name": "hackafe-website",
+  "description": "Hackafe Website",
+  "version": "0.0.1",
+  "private": true,
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/Hackafe/insider/blob/master/LICENSE.txt"
+  },
+  "scripts": {
+    "//starting": "-",
+    "start": "http-server public",
+    "//test": "-",
+    "test": "echo 'No tests defined, yet'"
+  },
+  "dependencies": {
+    "http-server": "^0.8.5"
+  }
+}
