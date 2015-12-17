@@ -16,10 +16,9 @@ deploy:
   steps:
     - add-ssh-key:
         keyname: DEPLOYKEY
-    - script:
-        name: Force add to known hosts due to custom port
-        code: |
-          ssh -p $SERVER_PORT -o StrictHostKeyChecking=no $SERVER apps
+    - add-to-known_hosts:
+        hostname: $SERVER
+        fingerprint: 4b:88:91:5e:9b:20:ca:8d:d5:c8:e9:70:f3:84:1f:45
     - script:
         name: Add remote
         code: |
