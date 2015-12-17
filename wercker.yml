@@ -14,14 +14,14 @@ build:
 deploy:
   steps:
     - add-ssh-key:
-        keyname: DEPLOYKEY
+        keyname: DEPLOY_KEY
     - add-to-known_hosts:
-        hostname: $SERVER_NAME
-        fingerprint: 4b:88:91:5e:9b:20:ca:8d:d5:c8:e9:70:f3:84:1f:45
+        hostname: $DEPLOY_HOST
+        fingerprint: $DEPLOY_FINGER
     - script:
         name: Add remote
         code: |
-          git remote add server ssh://$SERVER_NAME/$SERVER_PATH || true
+          git remote add server ssh://$DEPLOY_USER@$DEPLOY_HOST/$DEPLOY_PATH || true
     - script:
         name: Push to server
         code: |
