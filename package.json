@@ -1,0 +1,27 @@
+{
+  "name": "hackafe-website",
+  "version": "2.0.0",
+  "description": "Hackafe Website",
+  "main": "index.js",
+  "license": "ISC",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hackafe/website.git"
+  },
+  "keywords": [
+    "hackafe"
+  ],
+  "bugs": {
+    "url": "https://github.com/Hackafe/website/issues"
+  },
+  "homepage": "http://hackafe.org",
+  "scripts": {
+    "start": "harp server",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "harp": "harp"
+  },
+  "dependencies": {
+    "harp": "^0.20.1"
+  }
+}
