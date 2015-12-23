@@ -1,0 +1,49 @@
+box: node
+
+build:
+  steps:
+    - script:
+        name: echo nodejs information
+        code: |
+          echo "node version $(node -v) running"
+          echo "npm version $(npm -v) running"
+
+    - npm-install
+    - npm-test
+    - script:
+        name: Build static site
+        code: |
+          npm run build
+
+
+
+deploy:
+  steps:
+    - npm-install
+    - script:
+        name: Build static site
+        code: |
+          npm run build
+    - add-ssh-key:
+        keyname: DEPLOY_KEY
+    - add-to-known_hosts:
+        hostname: github.com
+        fingerprint: 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48
+    - script:
+        name: Setup git
+        code: |
+          git config --global user.email "wercker@hackafe.org"
+          git config --global user.name "Wercker Deployer"
+    - script:
+        name: Init repo
+        code: |
+          cd build
+          git init .
+          git add .
+          git commit -m "wercker build $WERCKER_BUILD_URL"
+    - script:
+        name: Push to gh-pages
+        code: |
+          cd build
+          git remote add github git@github.com:Hackafe/website.git
+          git push -f github master:gh-pages

@@ -18,7 +18,8 @@
   "homepage": "http://hackafe.org",
   "scripts": {
     "start": "harp server",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "harp compile --output build",
+    "test": "echo \"No test specified\"",
     "harp": "harp"
   },
   "dependencies": {
