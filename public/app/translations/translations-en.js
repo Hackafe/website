@@ -32,10 +32,10 @@ define(['I18n'],
             homePage: {
                 title: '<span>Hackafe</span> PLOV<span>&lt;DIV&gt;</span>',
                 subtitle: '<span class="top">co-workers &amp;</span> <span class="bottom">hacker space</span>',
-                aboutTitle: '<span class="white">What is</span><span class="black">hackafe</span>',
+                aboutTitle: '<span class="white">What is</span> <span class="black">hackafe</span>',
                 Hackafe: '<span class="highlight">Hackafe Plovdiv</span>',
-                WhoWeAre: 'We are young, nterprising, educated and proactive. We create new technology and the future. We change the world.',
-                HackafePlace: 'Hackafe Plovdiv is <a href="#!/contacts"> place </a>, where we exchange and share ideas, get new skills, make new contacts.',
+                WhoWeAre: 'We are young, enterprising, educated and proactive. We create new technology and the future. We change the world.',
+                HackafePlace: 'Hackafe Plovdiv is <a href="#!/contacts">place</a>, where we exchange and share ideas, get new skills, make new contacts.',
                 organize: 'We organize courses, meetings, lectures and conferences in Plovdiv:',
 
                 topics: 'Current topics of web technology, design and programming.',
