@@ -2,6 +2,7 @@
     "globals": {
         "title": "Hackafe - Plovdiv's hackerspace",
         "description": "",
+        "author": "",
         "uri": "http://hackafe.org"
     }
 }
