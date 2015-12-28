@@ -18,11 +18,21 @@
   "homepage": "http://hackafe.org",
   "scripts": {
     "start": "harp server",
-    "build": "harp compile --output build",
+    "clean": "rimraf build",
+    "prebuild": "npm run clean -s && mkdirp build",
+    "build:fonts": "npm run build:fonts:fontawesome && npm run build:fonts:glyphicons",
+    "build:fonts:fontawesome": "mkdirp build/fonts && cp node_modules/font-awesome/fonts/* build/fonts",
+    "build:fonts:glyphicons": "mkdirp build/fonts && cp node_modules/bootstrap/fonts/* build/fonts",
+    "build:static": "harp compile --output build",
+    "build": "npm run build:static && npm run build:fonts",
     "test": "echo \"No test specified\"",
     "harp": "harp"
   },
   "dependencies": {
-    "harp": "^0.20.1"
+    "bootstrap": "^3.3.6",
+    "font-awesome": "^4.5.0",
+    "harp": "^0.20.1",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.5.0"
   }
 }
