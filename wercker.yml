@@ -27,8 +27,9 @@ deploy:
     - add-ssh-key:
         keyname: DEPLOY_KEY
     - add-to-known_hosts:
-        hostname: github.com
-        fingerprint: 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48
+        hostname: $DEPLOY_SSH_SERVER
+        fingerprint: $DEPLOY_SSH_FINGERPRINT
+        port: $DEPLOY_SSH_PORT
     - script:
         name: Setup git
         code: |
@@ -45,5 +46,5 @@ deploy:
         name: Push to gh-pages
         code: |
           cd build
-          git remote add github git@github.com:Hackafe/website.git
-          git push -f github master:gh-pages
+          git remote add github $DEPLOY_REPO
+          git push -f github master:$DEPLOY_BRANCH
