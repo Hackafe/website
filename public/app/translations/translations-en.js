@@ -114,6 +114,7 @@ define(['I18n'],
                 pro2:" Monthly payment 75lv.",
                 benefits: "Benefits",
                 members: "Every member has equal rights regardless of membership type.",
+				registrationForm: "Registration form.",
                 payment:"How to pay?",
                 bankaccount:"With a bank transfer to the account of Hackafe in ProCredit Bank.",
                 IBAN: "BG36PRCB92301045641219"
