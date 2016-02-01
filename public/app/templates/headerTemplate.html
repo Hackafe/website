@@ -14,6 +14,7 @@
 
         <nav class="wrapper clearfix" id="navigation">
             <a href="/#!/" title="<%= I18n.t('navigation.home') %>" <% if(page === '#!/' || page === '') { %>class="active"<% } %> ><%= I18n.t('navigation.home') %></a>
+            <a href="http://insider.hackafe.org" title="<%= I18n.t('navigation.events') %>"><%= I18n.t('navigation.events') %></a>
             <a href="/#!/members" title="<%= I18n.t('navigation.member') %>"  <% if(page === '#!/members') { %>class="active"<% } %>><%= I18n.t('navigation.member') %></a>
             <!-- <a href="/#!/events" title="<%= I18n.t('navigation.events') %>" <% if(page.indexOf('events') !== -1) { %>class="active"<% } %>><%= I18n.t('navigation.events') %></a> -->
             <!-- <a href="/#!/announcements" title="<%= I18n.t('navigation.announcements') %>" <% if(page.indexOf('announcements') !== -1) { %>class="active"<% } %>>Обяви</a> -->
