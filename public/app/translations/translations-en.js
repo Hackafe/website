@@ -9,7 +9,8 @@ define(['I18n'],
 
             },
             footer: {
-                copyright: ''
+                copyright: '',
+                getLogo: 'Download Hackafe Logo'
             },
             newsletter: {
                 title: "Hackafe Newsletter",

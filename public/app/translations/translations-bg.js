@@ -9,12 +9,13 @@ define(['I18n'],
 
             },
             footer: {
-                copyright: ''
+                copyright: '',
+                getLogo: 'Изтегли рекламно лого'
             },
             newsletter: {
-                title: "Hackafe Newsletter",
-                emailPlaceholder: "Please, enter your email",
-                subscribe: "Subscribe"
+                title: "Новини от нас",
+                emailPlaceholder: "Твоята е-поща",
+                subscribe: "Абонирай се"
             },
             navigation: {
                 home: 'Начало',
