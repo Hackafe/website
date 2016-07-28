@@ -9,12 +9,13 @@ define(['I18n'],
 
             },
             footer: {
-                copyright: ''
+                copyright: '',
+                getLogo: 'Изтегли рекламно лого'
             },
             newsletter: {
-                title: "Hackafe Newsletter",
-                emailPlaceholder: "Please, enter your email",
-                subscribe: "Subscribe"
+                title: "Новини от нас",
+                emailPlaceholder: "Твоята е-поща",
+                subscribe: "Абонирай се"
             },
             navigation: {
                 home: 'Начало',
@@ -58,6 +59,7 @@ define(['I18n'],
                 map: 'Карта',
                 street: 'G Street View',
                 contacts: 'Контакти',
+                email: 'Е-поща',
                 org: 'Сдружение с нестопанска цел "Хакафе"',
                 org2: 'Сдружение с нестопанска цел "Хакафе"',
                 loc: 'ул. 11-ти Август №1, 4000 Пловдив, България',

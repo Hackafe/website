@@ -9,7 +9,8 @@ define(['I18n'],
 
             },
             footer: {
-                copyright: ''
+                copyright: '',
+                getLogo: 'Download Hackafe Logo'
             },
             newsletter: {
                 title: "Hackafe Newsletter",
@@ -57,6 +58,7 @@ define(['I18n'],
                 map: 'Map',
                 street: 'G Street View',
                 contacts: 'Contacts',
+                email: 'Е-Mail',
                 org: 'Non-profit organization "Hackafe"',
                 org2: 'Non-profit organization "Hackafe"',
                 loc: 'ul. 11ti August №1, 4000 Plovdiv, Bulgaria',
