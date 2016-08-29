@@ -61,8 +61,7 @@ define(['I18n'],
                 email: 'Е-Mail',
                 org: 'Non-profit organization "Hackafe"',
                 org2: 'Non-profit organization "Hackafe"',
-                loc: 'ul. 11ti August №1, 4000 Plovdiv, Bulgaria',
-                loc2: 'ul. Magura №1, 4000 Plovdiv, Bulgaria',
+                loc: 'Opalchenska str №13, 4000 Plovdiv, Bulgaria',
                 chief: 'Chief',
                 events: 'Events',
                 finance: 'Finance',
@@ -71,7 +70,6 @@ define(['I18n'],
                 announcement: 'Announcement',
                 system: 'Online system',
                 bigLabName: 'Big Lab',
-                littleLabName: 'Little Lab'
             },
 
            events: {
