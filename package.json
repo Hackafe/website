@@ -29,10 +29,10 @@
     "harp": "harp"
   },
   "dependencies": {
-    "bootstrap": "^3.3.6",
-    "font-awesome": "^4.5.0",
-    "harp": "^0.20.1",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.6.3",
+    "harp": "^0.20.3",
     "mkdirp": "^0.5.1",
-    "rimraf": "^2.5.0"
+    "rimraf": "^2.5.4"
   }
 }
