@@ -120,7 +120,8 @@ footer {
 }
 
 @media(max-width:991px) {
-    .customer-img,
+    .partner-img,
+    .sponsor-img,
     .img-related {
         margin-bottom: 30px;
     }
