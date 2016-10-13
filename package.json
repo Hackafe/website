@@ -16,23 +16,55 @@
     "url": "https://github.com/Hackafe/website/issues"
   },
   "homepage": "http://hackafe.org",
-  "scripts": {
-    "start": "harp server",
-    "clean": "rimraf build",
-    "prebuild": "npm run clean -s && mkdirp build",
-    "build:fonts": "npm run build:fonts:fontawesome && npm run build:fonts:glyphicons",
-    "build:fonts:fontawesome": "mkdirp build/fonts && cp node_modules/font-awesome/fonts/* build/fonts",
-    "build:fonts:glyphicons": "mkdirp build/fonts && cp node_modules/bootstrap/fonts/* build/fonts",
-    "build:static": "harp compile --output build",
-    "build": "npm run build:static && npm run build:fonts",
-    "test": "echo \"No test specified\"",
-    "harp": "harp"
-  },
   "dependencies": {
+    "aliasify": "^2.0.0",
+    "babel-core": "^6.17.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babelify": "^7.3.0",
     "bootstrap": "^3.3.7",
+    "browserify": "^13.1.0",
+    "cross-env": "^3.1.2",
     "font-awesome": "^4.6.3",
     "harp": "^0.20.3",
+    "jsonp": "^0.2.0",
+    "minifyify": "^7.3.3",
     "mkdirp": "^0.5.1",
-    "rimraf": "^2.5.4"
+    "moment": "^2.15.1",
+    "npm-run-all": "^3.1.0",
+    "rimraf": "^2.5.4",
+    "vue": "^2.0.1",
+    "vue-resource": "^1.0.3",
+    "vueify": "^9.2.4"
+  },
+  "devDependencies": {
+    "browserify-hmr": "^0.3.5",
+    "watchify": "^3.7.0"
+  },
+  "aliasify": {
+    "aliases": {
+      "vue": "vue/dist/vue.js"
+    }
+  },
+  "browserify": {
+    "transform": [
+      "vueify",
+      "babelify"
+    ]
+  },
+  "scripts": {
+    "prebuild": "npm run clean -s && mkdirp build",
+    "build:fonts:fontawesome": "mkdirp build/fonts && cp node_modules/font-awesome/fonts/* build/fonts",
+    "build:fonts:glyphicons": "mkdirp build/fonts && cp node_modules/bootstrap/fonts/* build/fonts",
+    "build:js": "cross-env NODE_ENV=production browserify src/index.js -d -p [minifyify --map /scripts.map.json --output build/scripts.map.json] > build/scripts.js",
+    "build:static": "harp compile --output build",
+    "test": "echo \"No test specified\"",
+    "harp": "harp",
+    "watch:js": "watchify -vd -p browserify-hmr -e src/index.js -o public/scripts.js -t aliasify",
+    "watch": "npm-run-all -lp watch:**",
+    "server": "harp server",
+    "//": "main commands",
+    "build": "npm-run-all -l build:static -p build:fonts:** build:js",
+    "start": "npm-run-all -lp server watch",
+    "clean": "rimraf build && rimraf public/scripts.js"
   }
 }
