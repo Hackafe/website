@@ -19,6 +19,7 @@
   "dependencies": {
     "aliasify": "^2.0.0",
     "axios": "^0.15.0",
+    "babel-core": "^6.17.0",
     "babel-preset-es2015": "^6.16.0",
     "babelify": "^7.3.0",
     "bootstrap": "^3.3.7",
