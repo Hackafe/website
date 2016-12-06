@@ -2,7 +2,7 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'text!templates/newsletterFormTemplate.html'
+  'text!templates/newsletterFormTemplate.html?v=1'
 ], function($, _, Backbone, newsletterTemplate){
     "use strict";
 
