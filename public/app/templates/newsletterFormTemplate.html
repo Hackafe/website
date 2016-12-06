@@ -2,9 +2,9 @@
 <h3><%= I18n.t('newsletter.title') %></h3>
 
 <!-- <form id="newsletter-form" method="post" action="http://hackafe.org/newsletter/?p=subscribe&id=1" name="signup" target="windowName"> -->
-<form id="newsletter-form" method="post" action="http://hackafe.org/newsletter/?p=subscribe&id=1" name="subscribeform">
+<form id="newsletter-form" method="post" target="_blank" action="//hackafe.us12.list-manage.com/subscribe/post?u=013ba89dde7a5824ed1254194&amp;id=92b3ddb609" name="subscribeform">
 
-    <input type="text" id="email" name="email" placeholder="<%= I18n.t('newsletter.emailPlaceholder') %>" required />
+    <input type="email" id="email" name="EMAIL" placeholder="<%= I18n.t('newsletter.emailPlaceholder') %>" required />
 
     <input type="hidden" name="htmlemail" value="1" />
 
