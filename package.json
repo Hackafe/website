@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "browserify-hmr": "^0.3.5",
+    "gh-pages": "^0.12.0",
     "watchify": "^3.7.0"
   },
   "aliasify": {
@@ -65,6 +66,7 @@
     "//": "main commands",
     "build": "npm-run-all -l build:static -p build:fonts:** build:js",
     "start": "npm-run-all -lp server watch",
-    "clean": "rimraf build && rimraf public/scripts.js"
+    "clean": "rimraf build && rimraf public/scripts.js",
+    "deploy": "gh-pages -d build -t"
   }
 }
